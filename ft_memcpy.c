@@ -6,7 +6,7 @@
 /*   By: sjacelyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 12:51:02 by sjacelyn          #+#    #+#             */
-/*   Updated: 2018/11/29 15:14:15 by sjacelyn         ###   ########.fr       */
+/*   Updated: 2018/12/06 16:48:03 by sjacelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (dst == src)
+		return (dst);
 	i = 0;
 	while (i < n)
 	{
