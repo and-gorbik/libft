@@ -6,7 +6,7 @@
 /*   By: sjacelyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 15:22:15 by sjacelyn          #+#    #+#             */
-/*   Updated: 2018/11/28 00:00:45 by sjacelyn         ###   ########.fr       */
+/*   Updated: 2018/12/06 16:52:28 by sjacelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,9 @@ char			**ft_strsplit(const char *s, char c)
 	if (!(words = ft_memalloc(sizeof(char *) * (get_word_count(s, c) + 1))))
 		return (NULL);
 	if (add_words(words, s, c) == -1)
+	{
+		free(words);
 		return (NULL);
+	}
 	return (words);
 }
