@@ -1,5 +1,4 @@
 NAME = libft.a
-HEADER = libft.h
 SRCS = ft_atoi.c \
 	   ft_bzero.c \
 	   ft_isalnum.c \
@@ -66,7 +65,7 @@ SRCS = ft_atoi.c \
 all: $(NAME)
 	
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRCS) -I $(HEADER)
+	gcc -Wall -Wextra -Werror -c $(SRCS)
 	ar rc $(NAME) *.o
 	ranlib $(NAME)
 clean:
