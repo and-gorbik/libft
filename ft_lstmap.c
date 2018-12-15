@@ -19,23 +19,6 @@ static void	del(void *data, size_t size)
 	free(data);
 }
 
-static void	push_back(t_list **root, t_list *item)
-{
-	t_list	*ptr;
-
-	if (!root)
-		return ;
-	if (!*root)
-	{
-		*root = item;
-		return ;
-	}
-	ptr = *root;
-	while (ptr->next)
-		ptr = ptr->next;
-	ptr->next = item;
-}
-
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*new_list;
@@ -51,7 +34,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 			ft_lstdel(&new_list, &del);
 			return (NULL);
 		}
-		push_back(&new_list, new_item);
+		ft_lstappend(&new_list, new_item);
 		lst = lst->next;
 	}
 	return (new_list);
