@@ -47,6 +47,8 @@ static void		free_all(char **result)
 		free(result[i]);
 		++i;
 	}
+	free(result);
+	*result = NULL;
 }
 
 static int		add_words(char **result, const char *s, char c)
@@ -87,9 +89,6 @@ char			**ft_strsplit(const char *s, char c)
 	if (!(words = ft_memalloc(sizeof(char *) * (get_word_count(s, c) + 1))))
 		return (NULL);
 	if (add_words(words, s, c) == -1)
-	{
-		free(words);
 		return (NULL);
-	}
 	return (words);
 }
