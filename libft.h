@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sjacelyn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sjacelyn <sjacelyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 12:36:26 by sjacelyn          #+#    #+#             */
-/*   Updated: 2018/12/05 20:04:13 by sjacelyn         ###   ########.fr       */
+/*   Updated: 2019/03/09 14:33:38 by sjacelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,5 +131,6 @@ t_list				*ft_lstfilter(t_list *lst, int (*filter)(t_list *elem));
 t_list				*ft_lstreduce(t_list *lst,
 					t_list *(*reducer)(t_list *one, t_list *two));
 t_list				*ft_lstfind(t_list *lst, void *data, size_t size);
+int					ft_strcount(const char *s, char chr);
 
 #endif
